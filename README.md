@@ -36,7 +36,6 @@ The activities were carried out to support two developers, Sarah and Mike, under
     du -sh *  - identifies space usage per directory.
   
 <img width="1349" height="714" alt="df commnd" src="https://github.com/user-attachments/assets/95f5bf87-304d-4f5c-89c7-2157c8c4f567" />
-<img width="915" height="693" alt="df   du log" src="https://github.com/user-attachments/assets/ffbdcef9-9f30-4aca-bc1b-2ec5ddf8fc02" />
 
 # 2.3 Process Monitoring
     High resource–consuming processes can be identified using:
@@ -48,6 +47,8 @@ The activities were carried out to support two developers, Sarah and Mike, under
         df -h >> /var/log/system_disk.log
         du -sh /var/* >> /var/log/system_usage.log
         These logs help in monitoring trends and capacity planning.
+ <img width="915" height="693" alt="df   du log" src="https://github.com/user-attachments/assets/ffbdcef9-9f30-4aca-bc1b-2ec5ddf8fc02" />
+
 
 # 3. Task 2: User Management and Access Control
    # Objective
