@@ -1,23 +1,23 @@
 # linux_assignment
-## DevOps System Administration Report
+# DevOps System Administration Report
 
 System Monitoring, User Management, and Backup Configuration
 Prepared By: Fresher DevOps Engineer
 Environment: Linux Server
 Users: Sarah and Mike
 
-## 1. Introduction
+# 1. Introduction
 
 This report documents the implementation of system monitoring, user management, access control, and automated backup configuration for a development environment. The objective of this task is to ensure a secure, well-monitored, and properly maintained system that follows operational and security best practices.
 
 The activities were carried out to support two developers, Sarah and Mike, under the guidance of a Senior DevOps Engineer. The implementation includes monitoring tools, secure user account management, password policies, and automated backup mechanisms for Apache and Nginx web servers.
 
-## 2. Task 1: System Monitoring Setup
+# 2. Task 1: System Monitoring Setup
    # Objective
 
     To configure monitoring tools that allow visibility into system performance, resource utilization, and capacity planning.
 
-## Implementation Details
+# Implementation Details
 
 #  2.1 Monitoring Tools Installation
    # The following tools were used:
@@ -25,7 +25,7 @@ The activities were carried out to support two developers, Sarah and Mike, under
         df          – to monitor disk usage
         du          – to identify directory-wise disk consumption
   
-## Installation (for Fedora-based systems):
+# Installation (for Fedora-based systems):
     sudo dnf install epel-release -y
     sudo dnf install htop nmon -y
 
@@ -46,7 +46,7 @@ The activities were carried out to support two developers, Sarah and Mike, under
         du -sh /var/* >> /var/log/system_usage.log
         These logs help in monitoring trends and capacity planning.
 
-## 3. Task 2: User Management and Access Control
+# 3. Task 2: User Management and Access Control
    # Objective
 
     To create secure user accounts for Sarah and Mike with restricted access, isolated directories, and enforced password policies.
@@ -73,7 +73,7 @@ The activities were carried out to support two developers, Sarah and Mike, under
     sudo chmod 700 /home/sarah/workspace
     sudo chmod 700 /home/mike/workspace
 
-## Result:
+# Result:
     Only the respective user can access their workspace.
     Other users are denied access.
 
@@ -85,7 +85,7 @@ The activities were carried out to support two developers, Sarah and Mike, under
     sudo chage -l sarah
     sudo chage -l mike
 
-## Passwords expire every 30 days.
+# Passwords expire every 30 days.
 # 3.7 Password Complexity Enforcement
     Edited configuration file:
     sudo nano /etc/security/pwquality.conf
@@ -107,7 +107,7 @@ The activities were carried out to support two developers, Sarah and Mike, under
    # PAM configuration verified in:
      /etc/pam.d/system-auth
 
-## 4. Task 3: Backup Configuration for Web Servers
+# 4. Task 3: Backup Configuration for Web Servers
 # Objective
 To configure automated backups for Apache and Nginx servers with verification and logging.
 
@@ -177,7 +177,7 @@ To configure automated backups for Apache and Nginx servers with verification an
     Verify archive content:
     tar -tzf /backups/apache_backup_YYYY-MM-DD_HH-MM-SS.tar.gz
 
-## 5. Validation & Testing
+# 5. Validation & Testing
    # Tests Performed:
      Verified user login for Sarah and Mike
      Confirmed access restriction between users
@@ -187,7 +187,7 @@ To configure automated backups for Apache and Nginx servers with verification an
      Verified archive integrity
      Checked log files
 
-## 6. Challenges Faced and Resolution
+# 6. Challenges Faced and Resolution
    # Issue	                       Resolution
      htop not found	               Enabled EPEL repository
      tar: Cannot stat	           Corrected syntax and file paths
@@ -195,7 +195,7 @@ To configure automated backups for Apache and Nginx servers with verification an
      Backup warnings	           Adjusted tar usage
      Permission denied	           Fixed ownership and chmod
 
-## 7. Conclusion
+# 7. Conclusion
    # All required tasks were successfully implemented:
      * System monitoring tools were installed and configured
      * User accounts were securely created with proper permissions
@@ -206,4 +206,4 @@ To configure automated backups for Apache and Nginx servers with verification an
 
 The system now meets operational, security, and maintenance standards expected in a production-like DevOps environment.
 
-## Done by Santosh Kumar Sharma 
+# Done by Santosh Kumar Sharma 
