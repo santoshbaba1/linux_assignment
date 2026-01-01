@@ -20,11 +20,12 @@ The activities were carried out to support two developers, Sarah and Mike, under
 # Implementation Details
 
 #  2.1 Monitoring Tools Installation
+
    # The following tools were used:
         htop / nmon – for CPU, memory, and process monitoring
         df          – to monitor disk usage
         du          – to identify directory-wise disk consumption  
-  
+<img width="1348" height="634" alt="htop output" src="https://github.com/user-attachments/assets/c8eedc3e-7795-48cb-bcb4-0d6e3e8dfd35" />  
 # Installation (for Fedora-based systems):
     sudo dnf install epel-release -y
     sudo dnf install htop nmon -y
