@@ -34,7 +34,8 @@ The activities were carried out to support two developers, Sarah and Mike, under
     nmon      - provides performance statistics and system load.
     df -h     - displays filesystem usage.
     du -sh *  - identifies space usage per directory.
-    <img width="1349" height="714" alt="df commnd" src="https://github.com/user-attachments/assets/2025c317-c56d-4bfb-b63b-d8666d0acc35" />
+  
+<img width="1349" height="714" alt="df commnd" src="https://github.com/user-attachments/assets/95f5bf87-304d-4f5c-89c7-2157c8c4f567" />
 
 # 2.3 Process Monitoring
     High resource–consuming processes can be identified using:
