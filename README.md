@@ -25,7 +25,7 @@ The activities were carried out to support two developers, Sarah and Mike, under
         htop / nmon – for CPU, memory, and process monitoring
         df          – to monitor disk usage
         du          – to identify directory-wise disk consumption  
-<img width="1348" height="634" alt="htop output" src="https://github.com/user-attachments/assets/c8eedc3e-7795-48cb-bcb4-0d6e3e8dfd35" />  
+
 # Installation (for Fedora-based systems):
     sudo dnf install epel-release -y
     sudo dnf install htop nmon -y
@@ -40,8 +40,11 @@ The activities were carried out to support two developers, Sarah and Mike, under
 
 # 2.3 Process Monitoring
     High resource–consuming processes can be identified using:
-    
+<img width="1064" height="716" alt="nmon output" src="https://github.com/user-attachments/assets/e3596100-35b3-40d0-9bce-135240891908" />
+<img width="968" height="646" alt="nmon output1" src="https://github.com/user-attachments/assets/67c062a3-0015-4e85-9f66-3c0777a4e4ca" />
+
     htop or ps aux --sort=-%cpu | head
+<img width="1348" height="634" alt="htop output" src="https://github.com/user-attachments/assets/c8eedc3e-7795-48cb-bcb4-0d6e3e8dfd35" />  
 
 # 2.4 Logging System Metrics
    # System command outputs are redirected to log files for review:
