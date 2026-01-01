@@ -1,12 +1,12 @@
 # linux_assignment
-# DevOps System Administration Report
+DevOps System Administration Report
 
 System Monitoring, User Management, and Backup Configuration
 Prepared By: Fresher DevOps Engineer
 Environment: Linux Server
 Users: Sarah and Mike
 
-# 1. Introduction
+1. Introduction
 
 This report documents the implementation of system monitoring, user management, access control, and automated backup configuration for a development environment. The objective of this task is to ensure a secure, well-monitored, and properly maintained system that follows operational and security best practices.
 
