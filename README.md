@@ -24,8 +24,7 @@ The activities were carried out to support two developers, Sarah and Mike, under
         htop / nmon – for CPU, memory, and process monitoring
         df          – to monitor disk usage
         du          – to identify directory-wise disk consumption  
-  <img width="1349" height="714" alt="df commnd" src="https://github.com/user-attachments/assets/2025c317-c56d-4bfb-b63b-d8666d0acc35" />
-
+  
 # Installation (for Fedora-based systems):
     sudo dnf install epel-release -y
     sudo dnf install htop nmon -y
@@ -35,6 +34,7 @@ The activities were carried out to support two developers, Sarah and Mike, under
     nmon      - provides performance statistics and system load.
     df -h     - displays filesystem usage.
     du -sh *  - identifies space usage per directory.
+    <img width="1349" height="714" alt="df commnd" src="https://github.com/user-attachments/assets/2025c317-c56d-4bfb-b63b-d8666d0acc35" />
 
 # 2.3 Process Monitoring
     High resource–consuming processes can be identified using:
