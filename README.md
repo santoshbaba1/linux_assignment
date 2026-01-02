@@ -115,21 +115,21 @@ The activities were carried out to support two developers, Sarah and Mike, under
     ocredit = -1
 
 
-   # These settings enforce:
-     Minimum 8 characters
+    These settings enforce:
+     Minimum 8 characters 
      At least one uppercase letter
      One lowercase letter
      One digit
      One special character
-   # PAM configuration verified in:
+    PAM configuration verified in:
      /etc/pam.d/system-auth
 
 # 4. Task 3: Backup Configuration for Web Servers
-Objective
-To configure automated backups for Apache and Nginx servers with verification and logging.
+    Objective
+    To configure automated backups for Apache and Nginx servers with verification and logging.
 
 # 4.1 Backup Requirements
-   # User       Server	    Configuration Path	    Document Root
+    User       Server	    Configuration Path	    Document Root
     Sarah       Apache	    /etc/httpd	            /var/www/html
     Mike	    Nginx	    /etc/nginx	            /usr/share/nginx/html
 # 4.2 Backup Directory
@@ -140,7 +140,7 @@ To configure automated backups for Apache and Nginx servers with verification an
 
 <img width="1009" height="186" alt="apache url" src="https://github.com/user-attachments/assets/68dcbb8c-2406-4d6c-b9b8-a76e0dc99cdd" /> 
 
-   # File: /usr/local/bin/apache_backup.sh
+    File: /usr/local/bin/apache_backup.sh
 
     # !/bin/bash
     DATE=$(date +%F_%H-%M-%S)
@@ -167,7 +167,7 @@ To configure automated backups for Apache and Nginx servers with verification an
 
 # 4.4 Nginx Backup Script
 
-   File: /usr/local/bin/nginx_backup.sh
+    File: /usr/local/bin/nginx_backup.sh
 
     # !/bin/bash
     DATE=$(date +%F_%H-%M-%S)
@@ -233,6 +233,6 @@ To configure automated backups for Apache and Nginx servers with verification an
      * Cron scheduling and verification were completed
      * Logs were maintained for audit and troubleshooting
 
-The system now meets operational, security, and maintenance standards expected in a production-like DevOps environment.
+    The system now meets operational, security, and maintenance standards expected in a production-like DevOps environment.
 
-# Done by Santosh Kumar Sharma 
+# By Santosh Kumar Sharma (12394)
