@@ -40,7 +40,9 @@ The activities were carried out to support two developers, Sarah and Mike, under
 
 # 2.3 Process Monitoring
     High resource–consuming processes can be identified using:
+
 <img width="1064" height="716" alt="nmon output" src="https://github.com/user-attachments/assets/e3596100-35b3-40d0-9bce-135240891908" />
+
 <img width="968" height="646" alt="nmon output1" src="https://github.com/user-attachments/assets/67c062a3-0015-4e85-9f66-3c0777a4e4ca" />
 
     htop or ps aux --sort=-%cpu | head
@@ -51,6 +53,7 @@ The activities were carried out to support two developers, Sarah and Mike, under
         df -h >> /var/log/system_disk.log
         du -sh /var/* >> /var/log/system_usage.log
         These logs help in monitoring trends and capacity planning.
+
  <img width="915" height="693" alt="df   du log" src="https://github.com/user-attachments/assets/ffbdcef9-9f30-4aca-bc1b-2ec5ddf8fc02" />
 
 
@@ -63,17 +66,20 @@ The activities were carried out to support two developers, Sarah and Mike, under
     sudo useradd -m -s /bin/bash sarah
     sudo useradd -m -s /bin/bash mike
     Each user receives a home directory and a default login shell.
+
 <img width="1108" height="148" alt="mike home dir" src="https://github.com/user-attachments/assets/75f296c2-6b7a-4716-814f-fa8b7d967a9e" />
 
 # 3.2 Password Configuration
     sudo passwd sarah
     sudo passwd mike
     Strong passwords were set manually.
+
 <img width="1230" height="444" alt="mike user permission" src="https://github.com/user-attachments/assets/90932cb3-c669-4134-b962-bf1208dbcfe0" />
 
 # 3.3 Workspace Directory Creation
     sudo mkdir -p /home/sarah/workspace
     sudo mkdir -p /home/mike/workspace
+
 <img width="1134" height="106" alt="mike security" src="https://github.com/user-attachments/assets/0510e0b0-a290-4ca2-bb96-a3c766006b1c" />
 
 # 3.4 Ownership Assignment
@@ -102,11 +108,11 @@ The activities were carried out to support two developers, Sarah and Mike, under
     sudo nano /etc/security/pwquality.conf
     
  Applied rules:
-     minlen = 8 
-     ucredit = -1
-     lcredit = -1
-     dcredit = -1
-     ocredit = -1
+    minlen = 8 
+    ucredit = -1
+    lcredit = -1
+    dcredit = -1
+    ocredit = -1
 
 
    # These settings enforce:
@@ -119,7 +125,7 @@ The activities were carried out to support two developers, Sarah and Mike, under
      /etc/pam.d/system-auth
 
 # 4. Task 3: Backup Configuration for Web Servers
- Objective
+Objective
 To configure automated backups for Apache and Nginx servers with verification and logging.
 
 # 4.1 Backup Requirements
@@ -131,7 +137,9 @@ To configure automated backups for Apache and Nginx servers with verification an
     sudo chmod 755 /backups
 
 # 4.3 Apache Backup Script
-<img width="1009" height="186" alt="apache url" src="https://github.com/user-attachments/assets/68dcbb8c-2406-4d6c-b9b8-a76e0dc99cdd" />   
+
+<img width="1009" height="186" alt="apache url" src="https://github.com/user-attachments/assets/68dcbb8c-2406-4d6c-b9b8-a76e0dc99cdd" /> 
+
    # File: /usr/local/bin/apache_backup.sh
 
     # !/bin/bash
@@ -150,10 +158,11 @@ To configure automated backups for Apache and Nginx servers with verification an
     echo "===== Apache Backup Completed =====" >> $LOG_FILE
     echo "" >> $LOG_FILE
 
- Make executable:
+    Make executable:
     sudo chmod +x /usr/local/bin/apache_backup.sh
     
 <img width="1188" height="343" alt="apache backup files" src="https://github.com/user-attachments/assets/5c02a95d-a11d-40e5-999e-5402774b41c0" />
+
 <img width="1018" height="708" alt="apache backup logs" src="https://github.com/user-attachments/assets/cce50709-824f-403a-b1f6-aea1537a1b4d" />
 
 # 4.4 Nginx Backup Script
@@ -176,10 +185,13 @@ To configure automated backups for Apache and Nginx servers with verification an
     echo "===== Nginx Backup Completed =====" >> $LOG_FILE
     echo "" >> $LOG_FILE
 
- Make executable:
+    Make executable:
     sudo chmod +x /usr/local/bin/nginx_backup.sh
-<img width="979" height="301" alt="nginx backup files" src="https://github.com/user-attachments/assets/b59304c7-2c03-4f4f-a91d-35b7eb5a84e1" />
-<img width="1042" height="704" alt="nginx backup logs" src="https://github.com/user-attachments/assets/ceb8d1ca-22aa-4d5e-b94c-0cc1ba86e422" />
+
+ <img width="979" height="301" alt="nginx backup files" src="https://github.com/user-attachments/assets/b59304c7-2c03-4f4f-a91d-35b7eb5a84e1" />
+
+ <img width="1042" height="704" alt="nginx backup logs" src="https://github.com/user-attachments/assets/ceb8d1ca-22aa-4d5e-b94c-0cc1ba86e422" />
+
 # 4.5 Cron Job Configuration (Every Tuesday at 12:00 AM)
     Edit root cron:
     sudo crontab -e
@@ -206,10 +218,10 @@ To configure automated backups for Apache and Nginx servers with verification an
 
 # 6. Challenges Faced and Resolution
      Issue	                        Resolution
-     htop not found	               Enabled EPEL repository
+     htop not found	                Enabled EPEL repository
      tar: Cannot stat	            Corrected syntax and file paths
-     Timezone access denied	      Used sudo privileges
-     Backup warnings	               Adjusted tar usage
+     Timezone access denied	        Used sudo privileges
+     Backup warnings	            Adjusted tar usage
      Permission denied	            Fixed ownership and chmod
 
 # 7. Conclusion
