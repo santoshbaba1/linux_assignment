@@ -13,20 +13,20 @@ This report documents the implementation of system monitoring, user management, 
 The activities were carried out to support two developers, Sarah and Mike, under the guidance of a Senior DevOps Engineer. The implementation includes monitoring tools, secure user account management, password policies, and automated backup mechanisms for Apache and Nginx web servers.
 
 # 2. Task 1: System Monitoring Setup
-   # Objective
+    Objective
 
     To configure monitoring tools that allow visibility into system performance, resource utilization, and capacity planning.
     
-# Implementation Details
+ Implementation Details
 
 #  2.1 Monitoring Tools Installation
 
-   # The following tools were used:
+    The following tools were used:
         htop / nmon – for CPU, memory, and process monitoring
         df          – to monitor disk usage
         du          – to identify directory-wise disk consumption  
 
-# Installation (for Fedora-based systems):
+    Installation (for Fedora-based systems):
     sudo dnf install epel-release -y
     sudo dnf install htop nmon -y
 
@@ -47,7 +47,7 @@ The activities were carried out to support two developers, Sarah and Mike, under
 <img width="1348" height="634" alt="htop output" src="https://github.com/user-attachments/assets/c8eedc3e-7795-48cb-bcb4-0d6e3e8dfd35" />  
 
 # 2.4 Logging System Metrics
-   # System command outputs are redirected to log files for review:
+    System command outputs are redirected to log files for review:
         df -h >> /var/log/system_disk.log
         du -sh /var/* >> /var/log/system_usage.log
         These logs help in monitoring trends and capacity planning.
@@ -55,7 +55,7 @@ The activities were carried out to support two developers, Sarah and Mike, under
 
 
 # 3. Task 2: User Management and Access Control
-   # Objective
+    Objective
 
     To create secure user accounts for Sarah and Mike with restricted access, isolated directories, and enforced password policies.
 
@@ -84,7 +84,7 @@ The activities were carried out to support two developers, Sarah and Mike, under
     sudo chmod 700 /home/sarah/workspace
     sudo chmod 700 /home/mike/workspace
 
-# Result:
+    Result:
     Only the respective user can access their workspace.
     Other users are denied access.
 
@@ -92,16 +92,16 @@ The activities were carried out to support two developers, Sarah and Mike, under
     Password expiration was enforced using:
     sudo chage -M 30 sarah
     sudo chage -M 30 mike
-   # To verify:
+    To verify:
     sudo chage -l sarah
     sudo chage -l mike
 
-# Passwords expire every 30 days.
+    Passwords expire every 30 days.
 # 3.7 Password Complexity Enforcement
     Edited configuration file:
     sudo nano /etc/security/pwquality.conf
     
-   # Applied rules:
+ Applied rules:
      minlen = 8 
      ucredit = -1
      lcredit = -1
@@ -119,7 +119,7 @@ The activities were carried out to support two developers, Sarah and Mike, under
      /etc/pam.d/system-auth
 
 # 4. Task 3: Backup Configuration for Web Servers
-# Objective
+ Objective
 To configure automated backups for Apache and Nginx servers with verification and logging.
 
 # 4.1 Backup Requirements
@@ -150,7 +150,7 @@ To configure automated backups for Apache and Nginx servers with verification an
     echo "===== Apache Backup Completed =====" >> $LOG_FILE
     echo "" >> $LOG_FILE
 
-# Make executable:
+ Make executable:
     sudo chmod +x /usr/local/bin/apache_backup.sh
     
 <img width="1188" height="343" alt="apache backup files" src="https://github.com/user-attachments/assets/5c02a95d-a11d-40e5-999e-5402774b41c0" />
@@ -158,7 +158,7 @@ To configure automated backups for Apache and Nginx servers with verification an
 
 # 4.4 Nginx Backup Script
 
-   # File: /usr/local/bin/nginx_backup.sh
+   File: /usr/local/bin/nginx_backup.sh
 
     # !/bin/bash
     DATE=$(date +%F_%H-%M-%S)
@@ -176,7 +176,7 @@ To configure automated backups for Apache and Nginx servers with verification an
     echo "===== Nginx Backup Completed =====" >> $LOG_FILE
     echo "" >> $LOG_FILE
 
-# Make executable:
+ Make executable:
     sudo chmod +x /usr/local/bin/nginx_backup.sh
 <img width="979" height="301" alt="nginx backup files" src="https://github.com/user-attachments/assets/b59304c7-2c03-4f4f-a91d-35b7eb5a84e1" />
 <img width="1042" height="704" alt="nginx backup logs" src="https://github.com/user-attachments/assets/ceb8d1ca-22aa-4d5e-b94c-0cc1ba86e422" />
@@ -195,7 +195,7 @@ To configure automated backups for Apache and Nginx servers with verification an
     tar -tzf /backups/apache_backup_YYYY-MM-DD_HH-MM-SS.tar.gz
 
 # 5. Validation & Testing
-   # Tests Performed:
+    Tests Performed:
      Verified user login for Sarah and Mike
      Confirmed access restriction between users
      Tested password expiration
@@ -205,15 +205,15 @@ To configure automated backups for Apache and Nginx servers with verification an
      Checked log files
 
 # 6. Challenges Faced and Resolution
-   # Issue	                       Resolution
+     Issue	                        Resolution
      htop not found	               Enabled EPEL repository
-     tar: Cannot stat	           Corrected syntax and file paths
-     Timezone access denied	       Used sudo privileges
-     Backup warnings	           Adjusted tar usage
-     Permission denied	           Fixed ownership and chmod
+     tar: Cannot stat	            Corrected syntax and file paths
+     Timezone access denied	      Used sudo privileges
+     Backup warnings	               Adjusted tar usage
+     Permission denied	            Fixed ownership and chmod
 
 # 7. Conclusion
-   # All required tasks were successfully implemented:
+    All required tasks were successfully implemented:
      * System monitoring tools were installed and configured
      * User accounts were securely created with proper permissions
      * Password expiration and complexity policies were enforced
