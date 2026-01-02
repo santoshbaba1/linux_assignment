@@ -179,7 +179,7 @@ To configure automated backups for Apache and Nginx servers with verification an
 # Make executable:
     sudo chmod +x /usr/local/bin/nginx_backup.sh
 <img width="979" height="301" alt="nginx backup files" src="https://github.com/user-attachments/assets/b59304c7-2c03-4f4f-a91d-35b7eb5a84e1" />
-
+<img width="1042" height="704" alt="nginx backup logs" src="https://github.com/user-attachments/assets/ceb8d1ca-22aa-4d5e-b94c-0cc1ba86e422" />
 # 4.5 Cron Job Configuration (Every Tuesday at 12:00 AM)
     Edit root cron:
     sudo crontab -e
